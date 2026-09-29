@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuickBite | Online Food Delivery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">🍴 <b>quick<span>bite</span></b></div>
+  <div class="search"><span>🔍</span><input id="searchInput" placeholder="Search food, e.g. burger, pizza..." autocomplete="off"><button id="searchBtn">Search</button></div>
+  <button class="cart" id="cartBtn">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="hero">
+ <div><small>FAST • FRESH • EASY</small><h1>Good food.<br><i>Good mood.</i></h1><p>Search your favourite food, add it to your cart and place your order in seconds.</p><button id="exploreBtn">Explore Menu →</button></div>
+ <div class="hero-food">🍕</div>
+</section>
+
+<main id="menu">
+ <small>DISCOVER</small><h2>What are you craving?</h2>
+ <div class="cats">
+  <button class="active" data-cat="All">✨ All</button><button data-cat="Pizza">🍕 Pizza</button><button data-cat="Burger">🍔 Burgers</button><button data-cat="Indian">🍛 Indian</button><button data-cat="Healthy">🥗 Healthy</button><button data-cat="Drinks">🥤 Drinks</button>
+ </div>
+ <div id="resultInfo"></div><div id="foodGrid" class="grid"></div>
+</main>
+
+<div id="cartModal" class="modal hidden"><div class="panel">
+ <button class="x" id="closeCart">×</button><small>YOUR ORDER</small><h2>Your Cart</h2>
+ <div id="cartItems"></div><div class="total">Total: ₹<b id="total">0</b></div>
+ <button class="checkout" id="checkoutBtn">Continue to Checkout →</button>
+</div></div>
+
+<div id="checkoutModal" class="modal hidden"><div class="panel">
+ <button class="x" id="closeCheckout">×</button><small>CHECKOUT</small><h2>Delivery Details</h2>
+ <form id="orderForm">
+  <label>Name<input id="name" required placeholder="Full name"></label>
+  <label>Phone<input id="phone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit phone number"></label>
+  <label>Address<textarea id="address" required placeholder="Delivery address"></textarea></label>
+  <label>Payment<select id="payment"><option>Cash on Delivery</option><option>UPI — Demo</option><option>Card — Demo</option></select></label>
+  <div class="order-total">Order total: <b>₹<span id="checkoutTotal">0</span></b></div>
+  <button class="checkout" type="submit">Place Order ✓</button>
+ </form>
+</div></div>
+
+<div id="successModal" class="modal hidden"><div class="panel success">
+ <div class="big">✅</div><small>ORDER CONFIRMED</small><h2>Order Placed!</h2><p id="successText"></p>
+ <button class="checkout" id="doneBtn">Done</button>
+</div></div>
+
+<div id="toast" class="toast hidden"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+FINAL VERSION: Open index.html in Chrome/Edge. Search, Add to Cart, Cart, Checkout and Place Order are all wired to buttons. Try burger -> + -> Continue to Checkout -> fill details -> Place Order.
